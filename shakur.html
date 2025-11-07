@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>SHAKUR — Personal Website</title>
+<style>
+:root{
+--bg:#0f1724;--card:#0b1220;--muted:#98a0b3;--accent1:#7c3aed;--accent2:#06b6d4;
+--glass:rgba(255,255,255,0.03);--radius:14px;--maxw:1100px;}
+*{box-sizing:border-box}
+body{margin:0;font-family:sans-serif;background:var(--bg);color:#e6eef8;line-height:1.5;padding:40px 20px;display:flex;justify-content:center;}
+.wrap{width:100%;max-width:var(--maxw);}
+header{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:28px;}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit;}
+.logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(2,6,23,0.6);}
+nav{display:flex;gap:14px;align-items:center}
+nav a{color:var(--muted);text-decoration:none;padding:8px 10px;border-radius:10px;font-weight:600;font-size:14px;}
+nav a:hover{color:#fff;background:var(--glass);}
+.btn{background:linear-gradient(90deg,var(--accent1),var(--accent2));border:none;color:white;padding:10px 14px;border-radius:10px;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(7,12,30,0.6);}
+.hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;margin-bottom:36px;}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:28px;box-shadow:0 8px 30px rgba(2,6,23,0.6);backdrop-filter:blur(6px);}
+.intro h1{margin:0 0 8px 0;font-size:32px;}
+.intro p{margin:0;color:var(--muted);}
+.links{display:flex;gap:10px;margin-top:18px;}
+.profile{text-align:center;padding:26px;display:flex;flex-direction:column;gap:14px;align-items:center;}
+.avatar{width:120px;height:120px;border-radius:20px;background:linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));display:grid;place-items:center;font-size:40px;font-weight:800;}
+.statrow{display:flex;gap:8px;justify-content:center}
+.stat{padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.02);font-weight:700;font-size:13px}
+section{margin-bottom:28px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.project{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.01), rgba(255,255,255,0.015));min-height:180px;display:flex;flex-direction:column;gap:10px;justify-content:center;}
+.project h4{margin:0 0 6px 0}
+.small{font-size:13px;color:var(--muted)}
+footer{opacity:0.9;color:var(--muted);font-size:14px;text-align:center;padding:20px 0}
+form{display:grid;gap:10px}
+input,textarea{background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);padding:10px;border-radius:10px;color:inherit;font-size:14px;}
+textarea{min-height:110px;resize:vertical}
+a.inline-link{color:var(--accent2);font-weight:700;text-decoration:none}
+@media (max-width:880px){.hero{grid-template-columns:1fr;}.grid-3{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:520px){nav{display:none}.grid-3{grid-template-columns:1fr}.avatar{width:96px;height:96px;font-size:34px}.logo{width:48px;height:48px;font-size:18px}}
+input[type=number]{width:80px;text-align:right;margin-right:6px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+<a class="brand" href="#home"><div class="logo">S</div><div><div style="font-weight:800">SHAKUR</div><div style="font-size:12px;color:var(--muted);margin-top:2px">Design • Code • Ideas</div></div></a>
+<nav>
+<a href="#about">About</a>
+<a href="#projects">Projects</a>
+<a href="#contact">Contact</a>
+<button class="btn" id="themeToggle">Toggle</button>
+</nav>
+</header>
+<main>
+<section class="hero" id="home">
+<div class="card intro">
+<h1>Hi — I'm <span style="background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;color:transparent">SHAKUR</span></h1>
+<p>Student • Learning Web Development • Fun Projects</p>
+<div class="links">
+<a class="btn" href="#projects">See projects</a>
+<a class="inline-link" href="#contact">Get in touch →</a>
+</div>
+</div>
+<aside class="card profile">
+<div class="avatar">S</div>
+<div style="font-weight:800;font-size:18px">SHAKUR</div>
+<div class="small">Student — coding & creative projects</div>
+<div class="statrow">
+<div class="stat">Projects 3</div>
+<div class="stat">Skills HTML/CSS/JS</div>
+</div>
+</aside>
+</section>
+
+<section id="about" class="card">
+<h2>About</h2>
+<p class="small">আমি SHAKUR — ওয়েব ডেভেলপমেন্ট শিখছি এবং ফান প্রজেক্ট বানাই।</p>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="grid-3">
+<article class="project">
+<h4>Programming Calculator</h4>
+<p class="small">Simple calculator: +, -, *, / operations.</p>
+<div>
+<input type="number" id="num1" placeholder="0">
+<select id="operator"><option value="+">+</option><option value="-">-</option><option value="*">*</option><option value="/">/</option></select>
+<input type="number" id="num2" placeholder="0">
+<button class="btn" onclick="calculate()">=</button>
+</div>
+<div class="small">Result: <span id="calcResult">0</span></div>
+</article>
+
+<article class="project">
+<h4>Fun Facts</h4>
+<p class="small">Click the button to get a random fun fact.</p>
+<button class="btn" onclick="showFact()">Show Fact</button>
+<div class="small" id="funFact">Here it will appear</div>
+</article>
+
+<article class="project">
+<h4>Viral News</h4>
+<p class="small">Some trending news links for fun reading.</p>
+<ul>
+<li><a class="inline-link" href="https://www.bbc.com/news" target="_blank">BBC News</a></li>
+<li><a class="inline-link" href="https://www.cnn.com" target="_blank">CNN News</a></li>
+<li><a class="inline-link" href="https://www.reddit.com/r/popular" target="_blank">Reddit Popular</a></li>
+</ul>
+</article>
+</div>
+</section>
+
+<section id="contact" class="card">
+<h2>Contact</h2>
+<p class="small">মেসেজ পাঠাতে চাইলে নীচে লিখো বা ইমেইল করো: <a class="inline-link" href="mailto:you@example.com">you@example.com</a></p>
+<form onsubmit="alert('Demo: replace with backend!');return false;">
+<input type="text" placeholder="Your name" required>
+<input type="email" placeholder="Your email" required>
+<textarea placeholder="Your message..." required></textarea>
+<button class="btn" type="submit">Send message</button>
+</form>
+</section>
+
+<footer>Made with ❤️ • SHAKUR — © <span id="year"></span></footer>
+</main>
+</div>
+
+<script>
+document.getElementById('year').textContent=new Date().getFullYear();
+const themeBtn=document.getElementById('themeToggle');
+themeBtn.addEventListener('click',()=>{const root=document.documentElement;if(root.style.getPropertyValue('--bg')==='#f7f9fb'){root.style.setProperty('--bg','#0f1724');root.style.setProperty('--card','#0b1220');}else{root.style.setProperty('--bg','#f7f9fb');root.style.setProperty('--card','#ffffff');}});
+
+// Calculator function
+function calculate(){
+  let n1=parseFloat(document.getElementById('num1').value)||0;
+  let n2=parseFloat(document.getElementById('num2').value)||0;
+  let op=document.getElementById('operator').value;
+  let res=0;
+  if(op==='+')res=n1+n2;
+  else if(op==='-')res=n1-n2;
+  else if(op==='*')res=n1*n2;
+  else if(op==='/')res=n2!==0?n1/n2:'Error';
+  document.getElementById('calcResult').textContent=res;
+}
+
+// Fun Facts
+const facts=["Bananas are berries but strawberries are not.","Honey never spoils.","Octopuses have three hearts.","A day on Venus is longer than a year on Venus.","Sharks existed before trees."];
+function showFact(){document.getElementById('funFact').textContent=facts[Math.floor(Math.random()*facts.length)];}
+</script>
+</body>
+</html>
